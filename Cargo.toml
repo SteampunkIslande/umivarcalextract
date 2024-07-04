@@ -1,0 +1,15 @@
+[package]
+name = "umivarcalextract"
+version = "0.1.0"
+authors = ["Charles Monod-Broca"]
+edition = "2021"
+description = "A super simple program that should work as a drop-in replacement for UMIVarCal extract"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.5.8", features = ["derive", "cargo"] }
+clap_derive = "4.5.8"
+noodles = { version = "0.77.0", features = ["bam", "sam"] }
+rayon = "1.10.0"
+thiserror = "1.0.61"
