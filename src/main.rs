@@ -49,7 +49,6 @@ fn main() -> Result<(), UMIVarCalExtractError> {
     match (tag, args.umi_length) {
         (Some(ref tag), None) => lib::add_mbc_from_tag(tag, &args.input, &args.output),
         (None, Some(umi_length)) => {
-            println!("UMI length: {}", umi_length);
             lib::add_mbc_from_umi_length(umi_length, &args.input, &args.output)
         }
         (None, None) => Err(UMIVarCalExtractError::NoUMIOptionProvided),
