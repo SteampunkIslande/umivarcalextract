@@ -37,27 +37,27 @@ pub struct Args {
 }
 
 impl Args {
-    pub fn input(&self) -> &PathBuf {
-        &self.input
+    #[must_use] pub fn input(&self) -> &PathBuf {
+        return &self.input
     }
 
-    pub fn output(&self) -> &PathBuf {
-        &self.output
+    #[must_use] pub fn output(&self) -> &PathBuf {
+        return &self.output
     }
 
-    pub fn tag(&self) -> &Option<String> {
-        &self.tag
+    #[must_use] pub fn tag(&self) -> &Option<String> {
+        return &self.tag
     }
 
-    pub fn umi_length(&self) -> Option<usize> {
-        self.umi_length
+    #[must_use] pub fn umi_length(&self) -> Option<usize> {
+        return self.umi_length
     }
 }
 
-pub fn build_cli() -> Command {
-    Args::command()
+#[must_use] pub fn build_cli() -> Command {
+    return Args::command()
 }
 
-pub fn parse() -> Args {
-    Args::parse()
+#[must_use] pub fn parse() -> Args {
+    return Args::parse()
 }

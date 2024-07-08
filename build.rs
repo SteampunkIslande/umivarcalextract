@@ -23,5 +23,5 @@ fn main() -> Result<(), Error> {
 
     println!("cargo:warning=completion file is generated: {path:?}");
 
-    Ok(())
+    return Ok(())
 }

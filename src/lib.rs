@@ -11,8 +11,8 @@ pub fn add_mbc_from_tag(
     input_path: &std::path::Path,
     output_path: &std::path::Path,
 ) -> Result<(), UMIVarCalExtractError> {
-    let mut reader = bam::io::reader::Builder::default().build_from_path(input_path)?;
-    let mut writer = bam::io::writer::Builder::default().build_from_path(output_path)?;
+    let mut reader = bam::io::reader::Builder.build_from_path(input_path)?;
+    let mut writer = bam::io::writer::Builder.build_from_path(output_path)?;
     let header = reader.read_header()?;
 
     writer.write_header(&header)?;
@@ -22,37 +22,37 @@ pub fn add_mbc_from_tag(
         let tag = record.data().get(tag_name);
         let mbc = match tag {
             Some(noodles::sam::alignment::record_buf::data::field::Value::Character(val)) => {
-                format!("{}", val)
+                format!("{val}")
             }
             Some(noodles::sam::alignment::record_buf::data::field::Value::Int8(val)) => {
-                format!("{}", val)
+                format!("{val}")
             }
             Some(noodles::sam::alignment::record_buf::data::field::Value::UInt8(val)) => {
-                format!("{}", val)
+                format!("{val}")
             }
             Some(noodles::sam::alignment::record_buf::data::field::Value::Int16(val)) => {
-                format!("{}", val)
+                format!("{val}")
             }
             Some(noodles::sam::alignment::record_buf::data::field::Value::UInt16(val)) => {
-                format!("{}", val)
+                format!("{val}")
             }
             Some(noodles::sam::alignment::record_buf::data::field::Value::Int32(val)) => {
-                format!("{}", val)
+                format!("{val}")
             }
             Some(noodles::sam::alignment::record_buf::data::field::Value::UInt32(val)) => {
-                format!("{}", val)
+                format!("{val}")
             }
             Some(noodles::sam::alignment::record_buf::data::field::Value::Float(val)) => {
-                format!("{}", val)
+                format!("{val}")
             }
             Some(noodles::sam::alignment::record_buf::data::field::Value::String(val)) => {
-                format!("{}", val)
+                format!("{val}")
             }
             Some(noodles::sam::alignment::record_buf::data::field::Value::Hex(val)) => {
-                format!("{}", val)
+                format!("{val}")
             }
             Some(noodles::sam::alignment::record_buf::data::field::Value::Array(val)) => {
-                format!("{:?}", val)
+                format!("{val:?}")
             }
             None => String::from("NNN-NNN"),
         };
@@ -69,8 +69,8 @@ pub fn add_mbc_from_umi_length(
     input_path: &std::path::Path,
     output_path: &std::path::Path,
 ) -> Result<(), UMIVarCalExtractError> {
-    let mut reader = bam::io::reader::Builder::default().build_from_path(input_path)?;
-    let mut writer = bam::io::writer::Builder::default().build_from_path(output_path)?;
+    let mut reader = bam::io::reader::Builder.build_from_path(input_path)?;
+    let mut writer = bam::io::writer::Builder.build_from_path(output_path)?;
     let header = reader.read_header()?;
 
     writer.write_header(&header)?;
